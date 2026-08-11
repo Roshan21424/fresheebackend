@@ -6,12 +6,17 @@ import jobsRouter from "./routes/jobs.js";
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+console.log("🔥 FRESHEES DEPLOY TEST V2");
 
 app.get("/", (req, res) => {
-  res.json({ message: "Freshees backend is alive" });
+  res.json({
+    message: "Freshees backend is alive",
+    version: "V2"
+  });
 });
+
+app.use(cors());
+app.use(express.json());
 
 app.use("/api/jobs", jobsRouter);
 
